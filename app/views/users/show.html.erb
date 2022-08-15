@@ -1,3 +1,6 @@
 <h1><%= @user.name %>のページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
+
+<%= link_to '新しくポストを投稿する', new_post_path %>
+<%= link_to 'ポスト一覧画面に移動する', posts_path %>

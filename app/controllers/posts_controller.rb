@@ -15,7 +15,8 @@ class PostsController < ApplicationController
       render :new
     else
       if @post.save
-        redirect_to posts_path, notice: "ブログを作成しました！"
+        PostMailer.post_mail(@post).deliver
+          redirect_to posts_path, notice: "ポストを作成しました！"
       else
         render :new
       end
@@ -23,16 +24,21 @@ class PostsController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(post_id: @post.id)
   end
 
   def edit
   end
 
   def update
-    if @post.update(post_params)
-      redirect_to posts_path, notice: "ポストを編集しました！"
+    if @post.user != current_user
+      redirect_to new_post_path
     else
-      render :edit
+      if @post.update(post_params)
+        redirect_to posts_path, notice: "ポストを編集しました！"
+      else
+        render :edit
+      end
     end
   end
 

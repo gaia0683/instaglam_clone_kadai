@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.1'
 
+gem 'rexml'
+
+gem 'faker'
+
 gem 'carrierwave'
 
 gem 'mini_magick'
@@ -31,6 +35,8 @@ group :development, :test do
 end
 
 group :development do
+
+  gem 'letter_opener_web'
 
   gem 'web-console', '>= 4.1.0'
 

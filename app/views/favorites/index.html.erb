@@ -1,0 +1,16 @@
+<h1>お気に入り一覧</h1>
+<table>
+  <tr>
+    <th>名前</th>
+    <th>内容</th>
+    <th>写真</th>
+  </tr>
+
+<% @favorites.each do |favorites| %>
+  <tr>
+    <td><%= favorites.user.name %></td>
+    <td><%= favorites.post.post %></td>
+    <td><%= image_tag favorites.post.picture.url, style: 'width:400px; height:240px' if favorites.post.picture.present? %></td>
+  </tr>
+<% end %>
+</table>

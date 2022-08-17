@@ -4,8 +4,8 @@
 
 <p>プロフィール画像:<%= image_tag @user.user_picture.url, style: 'width:400px; height:200px' %></p>
 
-<%= link_to 'プロフィールを編集する', edit_user_path %>
+<%= link_to 'プロフィールを編集する', edit_user_path, class: "btn btn-info" %>
 
-<%= link_to '新しくポストを投稿する', new_post_path %>
+<%= link_to '新しくポストを投稿する', new_post_path, class: "btn btn-warning" %>
 
-<%= link_to 'ポスト一覧画面に移動する', posts_path %>
+<%= link_to 'ポスト一覧画面に移動する', posts_path, class: "btn btn-primary" %>

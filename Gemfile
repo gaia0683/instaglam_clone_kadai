@@ -43,6 +43,8 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
 
+  gem 'dotenv-rails'
+
   gem 'spring'
 end
 

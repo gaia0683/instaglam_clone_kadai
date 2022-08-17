@@ -2,9 +2,12 @@
 
 <p>メールアドレス:<%= @user.email %></p>
 
-<p>プロフィール画像:<%= image_tag @user.user_picture.url, style: 'width:400px; height:200px' %></p>
+<p>プロフィール画像:<%= image_tag @user.user_picture.url, style: 'width:400px; height:200px' if @user.user_picture_url %></p>
 
-<%= link_to 'プロフィールを編集する', edit_user_path, class: "btn btn-info" %>
+<% if @user == current_user %>
+<%= link_to 'プロフィールを編集する', edit_user_path,class: "btn btn-info" %>
+<% else %>
+<% end %>
 
 <%= link_to '新しくポストを投稿する', new_post_path, class: "btn btn-warning" %>
 

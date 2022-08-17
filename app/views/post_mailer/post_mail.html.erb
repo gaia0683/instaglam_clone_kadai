@@ -6,4 +6,4 @@
 
 <p>post: <%= @post.post %></p>
 
-<p>picture: <%= image_tag @post.picture.url %></p>
+<p>picture: <%= image_tag @post.picture.url if @post.picture_url %></p>

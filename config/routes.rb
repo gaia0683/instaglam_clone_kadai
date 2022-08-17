@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     end
   end
 
+  Rails.application.routes.draw do
+    root to: 'posts#index'
+  end
+
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   end
